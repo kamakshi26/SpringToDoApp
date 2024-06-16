@@ -27,7 +27,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Description</th>
                 <th>isCompleted</th>
                 <th>targetDate</th>
@@ -36,13 +35,16 @@
         <tbody>
            <c:forEach var="todo" items="${todolist}">
            		<tr>
-           		<td>${todo.getId()}</td>
            		<td>${todo.getDescription()}</td>
            		<td>${todo.getTargetDate()}</td>
-           		<td>${todo.isDone()}</td>
+           		<td>${todo.getIsDone()}</td>
+           		<td><a href="delete-todo?id=${todo.getId()}"><button>delete</button></a></td>
+           		<td><a href="update-todo?id=${todo.getId()}"><button>update</button></a></td>
            		</tr>
            </c:forEach>
+         
         </tbody>
     </table>
+      <a href="add-todo"><button > Add Todo </button></a>
 </body>
 </html>
